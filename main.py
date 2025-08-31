@@ -1,5 +1,10 @@
 from utils import llm_helpers
 
-response = llm_helpers.chat("hey how are you")
+user_input = input("Prompt: ")
 
-print(response)
+while(user_input != "exit"):
+
+    response = llm_helpers.chat(user_input)
+    print(response)
+    user_input = input("Prompt: ")
+

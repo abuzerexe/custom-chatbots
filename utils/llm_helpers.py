@@ -1,9 +1,7 @@
 from openai import OpenAI
 from config import (
-    GEMINI_API_KEY,
     OPEN_ROUTER_API_KEY,
     OPEN_ROUTER_BASE_URL,
-    DEFAULT_GEMINI_MODEL,
     DEFAULT_OPENAI_MODEL)
 
 client = OpenAI(
@@ -11,16 +9,19 @@ client = OpenAI(
     api_key=OPEN_ROUTER_API_KEY
 )
 
-def chat(inp:str, role="user"):
-    message_history = []
-    message_history.append({"role":role,"content":inp})
+message_history = []
 
-    completeion = client.responses.create(
+def chat(user_input):
+    message_history.append({"role":"user","content":user_input})
+
+    completeion = client.chat.completions.create(
         model= DEFAULT_OPENAI_MODEL,
-        input = message_history
-    )
+        messages = message_history,
+        max_tokens=500,
+        temperature=0.7,
 
-    response = completeion
-    print(response)
-    print(inp)
-    return "hetlo"
+    )
+    response = completeion.choices[0].message.content
+    message_history.append({"role":"assistant","content":response})
+    print(message_history)
+    return response
