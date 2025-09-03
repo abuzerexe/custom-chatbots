@@ -26,13 +26,13 @@ def test_personas():
         "results": {}
     }
     
-    print("🧪 PERSONA TESTING STARTED")
+    print("PERSONA TESTING STARTED")
     print("=" * 60)
     print(f"Testing {len(personas)} personas with {len(test_questions)} questions")
     print("=" * 60)
     
     for persona in personas:
-        print(f"\n🎭 Testing {persona.upper()} persona...")
+        print(f"\nTesting {persona.upper()} persona...")
         results["results"][persona] = {}
         
         # Switch to persona
@@ -52,10 +52,10 @@ def test_personas():
                     "persona_info": persona_info
                 }
                 
-                print(f"    ✅ Response received ({len(response)} chars)")
+                print(f"    Response received ({len(response)} chars)")
                 
             except Exception as e:
-                print(f"    ❌ Error: {e}")
+                print(f"    Error: {e}")
                 results["results"][persona][question] = {
                     "error": str(e),
                     "persona_info": persona_info
@@ -68,7 +68,7 @@ def test_personas():
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     
-    print(f"\n💾 Results saved to: {filename}")
+    print(f"\nResults saved to: {filename}")
     return results
 
 def display_comparison(results=None):
@@ -81,23 +81,23 @@ def display_comparison(results=None):
         
         test_files = glob.glob("persona_test_results_*.json")
         if not test_files:
-            print("❌ No test results found. Run test_personas() first.")
+            print("No test results found. Run test_personas() first.")
             return
         
         # Load most recent file
         latest_file = max(test_files, key=os.path.getctime)
-        print(f"📂 Loading results from: {latest_file}")
+        print(f"Loading results from: {latest_file}")
         
         with open(latest_file, 'r', encoding='utf-8') as f:
             results = json.load(f)
     
     print("\n" + "=" * 80)
-    print("📊 PERSONA COMPARISON RESULTS")
+    print("PERSONA COMPARISON RESULTS")
     print("=" * 80)
     print(f"Test Date: {results['test_date']}")
     
     for question in results["questions"]:
-        print(f"\n🔍 QUESTION: {question}")
+        print(f"\nQUESTION: {question}")
         print("-" * 60)
         
         for persona, data in results["results"].items():
@@ -107,7 +107,7 @@ def display_comparison(results=None):
                 
                 print(f"\n[{persona_name.upper()}]:")
                 if "error" in data[question]:
-                    print(f"❌ Error: {data[question]['error']}")
+                    print(f"Error: {data[question]['error']}")
                 else:
                     # Truncate long responses for comparison view
                     display_response = response[:300] + "..." if len(response) > 300 else response
@@ -123,7 +123,7 @@ def generate_comparison_report():
     
     test_files = glob.glob("persona_test_results_*.json")
     if not test_files:
-        print("❌ No test results found. Run test_personas() first.")
+        print("No test results found. Run test_personas() first.")
         return
     
     # Load most recent file
@@ -173,11 +173,11 @@ def generate_comparison_report():
         f.write("- **Creative Companion:** [Add observations]\n") 
         f.write("- **Technical Expert:** [Add observations]\n\n")
     
-    print(f"📝 Comparison report generated: {report_filename}")
+    print(f"Comparison report generated: {report_filename}")
     return report_filename
 
 if __name__ == "__main__":
-    print("🧪 Persona Testing Suite")
+    print("Persona Testing Suite")
     print("Choose an option:")
     print("1. Run persona tests")
     print("2. Display comparison")
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     
     if choice == "1":
         results = test_personas()
-        print("\n✅ Testing complete!")
+        print("\nTesting complete!")
         
         show_results = input("\nShow results now? (y/n): ").strip().lower()
         if show_results == 'y':
@@ -200,4 +200,4 @@ if __name__ == "__main__":
         generate_comparison_report()
         
     else:
-        print("❌ Invalid choice")
+        print("Invalid choice")

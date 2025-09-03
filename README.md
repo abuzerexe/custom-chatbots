@@ -5,30 +5,30 @@ This project implements a complete conversational AI chatbot system with multipl
 
 ## Features
 
-### ✅ Assignment Requirements Completed
+### Assignment Requirements Completed
 
 #### Part 1: Basic Chat Implementation (40 points)
-- ✅ Command-line chat loop with user input/output
-- ✅ OpenAI API integration using chat completions format
-- ✅ Proper error handling for API calls and user input
-- ✅ Conversation history maintenance for context
+- Command-line chat loop with user input/output
+- OpenAI API integration using chat completions format
+- Proper error handling for API calls and user input
+- Conversation history maintenance for context
 
 #### Part 2: System Prompt Experimentation (35 points)
-- ✅ **Professional Assistant**: Formal, business-like responses
-- ✅ **Creative Companion**: Imaginative, artistic responses  
-- ✅ **Technical Expert**: Detailed, technical explanations
-- ✅ Persona testing script with comparison functionality
+- **Professional Assistant**: Formal, business-like responses
+- **Creative Companion**: Imaginative, artistic responses  
+- **Technical Expert**: Detailed, technical explanations
+- Persona testing script with comparison functionality
 
 #### Part 3: Streamlit Interface (25 points)
-- ✅ Clean, user-friendly web interface
-- ✅ Message history display with timestamps
-- ✅ System prompt selector with live switching
-- ✅ Message export functionality (JSON format)
+- Clean, user-friendly web interface
+- Message history display with timestamps
+- System prompt selector with live switching
+- Message export functionality (JSON format)
 
 #### Bonus Features (5 points)
-- ✅ Conversation persistence across sessions
-- ✅ Save/load functionality with JSON format
-- ✅ Conversation statistics and analytics
+- Conversation persistence across sessions
+- Save/load functionality with JSON format
+- Conversation statistics and analytics
 
 ## Installation & Setup
 
@@ -106,17 +106,17 @@ week-2-custom-chatbots/
 
 ## Personas Explained
 
-### 🏢 Professional Assistant
+### Professional Assistant
 - **Purpose**: Business and professional queries
 - **Tone**: Formal, structured, authoritative
 - **Best for**: Business advice, formal communications, professional guidance
 
-### 🎨 Creative Companion  
+### Creative Companion  
 - **Purpose**: Creative and artistic tasks
 - **Tone**: Imaginative, inspiring, artistic
 - **Best for**: Creative writing, brainstorming, artistic projects
 
-### 🔧 Technical Expert
+### Technical Expert
 - **Purpose**: Technical explanations and guidance
 - **Tone**: Detailed, educational, precise
 - **Best for**: Technical concepts, programming help, step-by-step instructions
@@ -160,24 +160,24 @@ The system includes comprehensive error handling for:
 
 ## Assignment Evaluation
 
-### Functionality ✅
+### Functionality
 - CLI chat interface works correctly
 - All personas respond appropriately
 - Streamlit interface is fully functional
 - Error handling prevents crashes
 
-### Code Quality ✅
+### Code Quality
 - Clean, well-commented code
 - Proper separation of concerns
 - Error handling throughout
 - Consistent naming conventions
 
-### Prompt Engineering ✅
+### Prompt Engineering
 - Three distinct personas with clear differences
 - Effective system prompts that create distinct behaviors
 - Proper context management
 
-### Documentation ✅
+### Documentation
 - Comprehensive README
 - Code comments explaining functionality
 - Clear usage instructions
@@ -216,15 +216,15 @@ Tell me a story about AI
 
 ## Assignment Submission Checklist
 
-- [x] Working CLI chat interface
-- [x] Three distinct personas implemented
-- [x] Streamlit web interface
-- [x] Error handling implemented
-- [x] Conversation history maintained
-- [x] Export functionality working
-- [x] Code is clean and commented
-- [x] README documentation complete
-- [x] Bonus persistence features implemented
+- Working CLI chat interface
+- Three distinct personas implemented
+- Streamlit web interface
+- Error handling implemented
+- Conversation history maintained
+- Export functionality working
+- Code is clean and commented
+- README documentation complete
+- Bonus persistence features implemented
 
 ## Screenshots
 

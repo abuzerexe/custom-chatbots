@@ -42,12 +42,12 @@ def main():
     initialize_session_state()
     
     # Header
-    st.title("🤖 Custom AI ChatBot")
+    st.title("Custom AI ChatBot")
     st.markdown("**Week 2: Conversational LLMs & System Prompt Experimentation**")
     
     # Sidebar configuration
     with st.sidebar:
-        st.header("⚙️ Configuration")
+        st.header("Configuration")
         
         # Persona selection
         personas = llm_helpers.get_available_personas()
@@ -90,10 +90,10 @@ def main():
         st.divider()
         
         # Chat controls
-        st.header("💬 Chat Controls")
+        st.header("Chat Controls")
         
         # Clear conversation
-        if st.button("🧹 Clear Conversation", type="secondary", use_container_width=True):
+        if st.button("Clear Conversation", type="secondary", use_container_width=True):
             st.session_state.messages = []
             llm_helpers.clear_history()
             st.rerun()
@@ -104,19 +104,19 @@ def main():
             
             col1, col2 = st.columns(2)
             with col1:
-                st.metric("👤 Your Messages", stats["user_messages"])
+                st.metric("Your Messages", stats["user_messages"])
             with col2:
-                st.metric("🤖 AI Responses", stats["assistant_messages"])
+                st.metric("AI Responses", stats["assistant_messages"])
         
         st.divider()
         
         # Export functionality
-        st.header("💾 Export")
+        st.header("Export")
         if st.session_state.messages:
             export_data = export_chat_history()
             if export_data:
                 st.download_button(
-                    "📥 Download Chat History",
+                    "Download Chat History",
                     export_data,
                     f"chat_history_{st.session_state.current_persona}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
                     "application/json",
@@ -128,7 +128,7 @@ def main():
         st.divider()
         
         # Instructions
-        with st.expander("💡 Usage Tips"):
+        with st.expander("Usage Tips"):
             st.markdown("""
             **Getting Started:**
             1. Select different personas to see how they respond
@@ -147,7 +147,7 @@ def main():
             """)
 
     # Main chat interface
-    st.header(f"💬 Chat with {llm_helpers.get_current_persona_info()['name']}")
+    st.header(f"Chat with {llm_helpers.get_current_persona_info()['name']}")
     
     # Display chat history
     chat_container = st.container()
@@ -174,7 +174,7 @@ def main():
         
         # Get AI response
         with st.chat_message("assistant"):
-            with st.spinner("🤔 Thinking..."):
+            with st.spinner("Thinking..."):
                 try:
                     # Sync session state with llm_helpers conversation history
                     llm_helpers.clear_history()
@@ -192,7 +192,7 @@ def main():
                     st.caption(f"Generated at {current_time} using {current_persona_info['name']}")
                     
                 except Exception as e:
-                    st.error(f"❌ Error: {str(e)}")
+                    st.error(f"Error: {str(e)}")
                     response = f"Error: {str(e)}"
         
         # Add assistant response to session state
@@ -214,7 +214,7 @@ def main():
         st.markdown(
             "<div style='text-align: center; color: #666;'>"
             "Week 2 Assignment: Custom Chatbot Interface<br>"
-            "Built with Streamlit • Powered by OpenAI API"
+            "Built with Streamlit - Powered by OpenAI API"
             "</div>",
             unsafe_allow_html=True
         )
