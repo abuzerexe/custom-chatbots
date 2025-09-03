@@ -214,24 +214,6 @@ Tell me a story about AI
 /stats
 ```
 
-## Assignment Submission Checklist
 
-- Working CLI chat interface
-- Three distinct personas implemented
-- Streamlit web interface
-- Error handling implemented
-- Conversation history maintained
-- Export functionality working
-- Code is clean and commented
-- README documentation complete
-- Bonus persistence features implemented
-
-## Screenshots
-
-*Note: Take screenshots of:*
-1. CLI interface showing different personas
-2. Streamlit interface with persona selector
-3. Exported conversation file
-4. Persona comparison results
 
 This completes all requirements for the Week 2 assignment on Conversational LLMs and Prompt Engineering.
